@@ -1,0 +1,53 @@
+[{
+        "show me everything of %table%": "select",
+        "display all data from %table%": "select",
+        "details of %table%": "select",
+        "show all %table%": "select",
+        "give %table%": "select"
+    }, {
+        "show %attribute% of %table%": "select.var",
+        "display %attribute% from %table%": "select.var"
+    }, {
+        "give all %table% where %column% is equal to %colData%": "select.where",
+        "show %table% which have %column% %operator% %colData%": "select.where",
+        "show me data of all %table% that have %column% %operator% %colData%": "select.where",
+        "show me data of all %table% whose %column% %operator% %colData%": "select.where",
+        "display %table% that have %column% %operator% %colData%": "select.where",
+        "display %table% whose %column% %operator% %colData%": "select.where",
+        "%table% with %column% %operator% %colData%": "select.where",
+        "%table% whose %column% %operator% %colData%": "select.where"
+    }, {
+        "count number of %table% ": "count",
+        "count all %table%": "count"
+    }, {
+        "count number of %table% where %column% is equal to %colData%": "count.where",
+        "display number of %table% that have %column% as %colData%": "count.where",
+        "how many %table% have %column% %operator% %colData%": "count.where",
+        "count %table% which have %column% as %colData%": "count.where",
+        "count data of all %table% that have %column% %operator% %colData%": "count.where"
+        
+    },
+    {
+        "show me %agg %aggColumn% of %table% ": "agg",
+        "give %agg% %aggColumn% from %table%": "agg",
+        "display %agg%  %aggColumn% of %colData%": "agg",
+        "%agg%  %aggColumn% of %colData%": "agg"
+    },
+    {
+        "show me %agg% %aggColumn% of %table% where %column% is equal to %colData%": "agg.where",
+        "display %agg%  %aggColumn% of %table% which have %column% %operator% %colData": "agg.where",
+        "%agg%  %aggColumn% of %table% that have %column% %operator% %colData%": "agg.where"
+    },
+    {
+        "update %newColumn% as %newColData% where %column% is %colData%": "update.where",
+        "Change %newColumn% as %newColData% where %column% is %colData%": "update.where",
+        "Edit %newColumn% as %newColData% where %column% is %colData%": "update.where",
+        "Modify %newColumn% as %newColData% where %column% is %colData%": "update.where",
+        "Overwrite %newColumn% to %newColData% where %column% is %colData%": "update.where",
+        "update %newColumn% as %newColData% in %table% where %column% is %colData%": "update.where",
+        "Change %newColumn% as %newColData% in %table% where %column% is %colData%": "update.where",
+        "Edit %newColumn% as %newColData% in %table% where %column% is %colData%": "update.where",
+        "Modify %newColumn% as %newColData% in %table% where %column% is %colData%": "update.where",
+        "Overwrite %newColumn% to %newColData% in %table% where %column% is %colData%": "update.where"
+    }
+]

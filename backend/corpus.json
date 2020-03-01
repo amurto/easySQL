@@ -1,0 +1,13 @@
+{
+    "name": "test",
+    "locale": "en-US",
+    "data": [
+      {
+        "intent": "select",
+        "utterances": [
+            "show me everything",
+            "display all data"
+        ]
+      }
+    ]
+  }

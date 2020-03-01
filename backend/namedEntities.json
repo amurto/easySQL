@@ -1,0 +1,105 @@
+[
+  {
+    "entity": "table",
+    "option": "students",
+    "languages": [
+      "en"
+    ],
+    "sourceTexts": [
+      "students", "student","children"
+    ]
+  },
+  {
+    "entity": "table",
+    "option": "cars",
+    "languages": [
+      "en"
+    ],
+    "sourceTexts": [
+      "cars", "car","vehicle"
+    ]
+  },
+
+  
+  {
+    "entity": "operator",
+    "option": "=",
+    "languages": [
+      "en"
+    ],
+    "sourceTexts": [
+      "equals", "as","equal to","same as","is"
+    ]
+  },
+  {
+    "entity": "operator",
+    "option": ">",
+    "languages": [
+      "en"
+    ],
+    "sourceTexts": [
+      "greater than", "more than","bigger than"
+    ]
+  },
+  {
+    "entity": "operator",
+    "option": "<",
+    "languages": [
+      "en"
+    ],
+    "sourceTexts": [
+      "less than", "smaller than"
+    ]
+  },
+
+  {
+    "entity": "agg",
+    "option": "max",
+    "languages": [
+      "en"
+    ],
+    "sourceTexts": [
+      "max", "maximum","highest","largest"
+    ]
+  },
+  {
+    "entity": "agg",
+    "option": "min",
+    "languages": [
+      "en"
+    ],
+    "sourceTexts": [
+      "min", "minimum","smallest","lowest"
+    ]
+  },
+  {
+    "entity": "agg",
+    "option": "avg",
+    "languages": [
+      "en"
+    ],
+    "sourceTexts": [
+      "avg", "average","mean"
+    ]
+  },
+  {
+    "entity": "agg",
+    "option": "sum",
+    "languages": [
+      "en"
+    ],
+    "sourceTexts": [
+      "sum", "summation" , "total","cumulative", "net","cumulative"
+    ]
+  },
+  {
+    "entity": "update",
+    "option": "update",
+    "languages": [
+      "en"
+    ],
+    "sourceTexts": [
+      "update", "edit" , "overwrite" , "change" , "modify"
+    ]
+  }
+]
