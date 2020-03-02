@@ -11,9 +11,12 @@ import { QueryContext } from './components/context/query-context';
 import PrimaryAppBar from './components/utils/PrimaryAppBar';
 import Landing from './components/utils/Landing';
 import BottomNav from './components/utils/BottomNav';
-import Visualization from './components/utils/Visualization';
-import History from './components/utils/History';
+// import Visualization from './components/utils/Visualization';
+// import History from './components/utils/History';
 import SpeedDial from './components/utils/SpeedDial';
+
+const Visualization = React.lazy(() => import('./components/utils/Visualization'));
+const History = React.lazy(() => import('./components/utils/History'));
 
 const App = () => {
   const [query, setQuery] = useState("");
@@ -47,10 +50,12 @@ const App = () => {
           <SpeedDial />
       </Route>
       <Route path="/visual">
-        <Visualization />
+          <Visualization />
+          <SpeedDial />
       </Route>
       <Route path="/history">
-        <History />
+          <History />
+          <SpeedDial />
       </Route>
       <Redirect to="/" />
     </Switch>

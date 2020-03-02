@@ -29,11 +29,6 @@ app.use((req, res, next) => {
     next();
 });
 
-// app.use((req, res, next) => {
-//     const error = new HttpError('Could not find this route.', 404);
-//     throw error;
-// });
-
 app.use((error, req, res, next) => {
     if (req.file) {
         fs.unlink(req.file.path, (err) => {
@@ -50,10 +45,10 @@ app.use((error, req, res, next) => {
 const nlpHandler = require('./nlp/nlpHandler');
 
 const db = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : '',
-     database : 'nodemysql'
+    host     : 'sql12.freesqldatabase.com',
+    user     : 'sql12325245',
+    password : 'tQGhhqwLxh',
+    database : 'sql12325245'
 });
 
 db.connect((err) => {
@@ -105,7 +100,7 @@ async function handleRequest(req, res) {
 }
 
 
-app.route('/').post(handleRequest);
+app.route('/nl2sql').post(handleRequest);
 app.route('/translate').post(handleTranslation);
 
 app.get('/createtable', (req, res) => {

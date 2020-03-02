@@ -47,7 +47,7 @@ const Query = () => {
       queryContext.loadingTable(true);
       try {
         const responseData = await sendRequest(
-            process.env.REACT_APP_BACKEND_URL + '/',
+            process.env.REACT_APP_BACKEND_URL + '/nl2sql',
             'POST',
             JSON.stringify({
                 sentence: query

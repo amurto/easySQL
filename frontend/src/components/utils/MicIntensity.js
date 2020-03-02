@@ -2,9 +2,6 @@ import React from 'react';
 import { ReactMic } from 'react-mic';
 import SpeechKit from './SpeechKit';
 
-// eslint-disable-next-line
-import Dictaphone from './Dictaphone';
-
 const MicIntensity = props => {
     return (
         <div>
@@ -15,7 +12,6 @@ const MicIntensity = props => {
                 backgroundColor="#352961" 
             />
             <SpeechKit handleClose={props.handleClose} />
-            {/* <Dictaphone record={props.record} handleClose={props.handleClose} /> */}
         </div>
     )
 }
