@@ -14,8 +14,8 @@ const db = mysql.createConnection({
 const manager = new NlpManager({ languages: ['en'], ner: { threshold: 1 }, });
 const nerManager = manager.container.get('ner');
 
-const Questions = require('./Questions.json');
-const namedEntities = require('./namedEntities.json')
+const Questions = require('../datasets/Questions.json');
+const namedEntities = require('../datasets/namedEntities.json')
 // const fs = require('fs');
 
 for (let QuestionsIntent of Questions) {
@@ -59,9 +59,9 @@ const handler={
             
         let result  =  await manager.process('en',sentence);
         // .then(result => {
-        console.log( JSON.stringify(result,null,2));
+        // console.log( JSON.stringify(result,null,2));
 
-        console.log( JSON.stringify(result,null,2));
+        // console.log( JSON.stringify(result,null,2));
 
         let table = result.entities.filter((element)=>{
           return element.entity === 'table'
@@ -95,12 +95,13 @@ const handler={
 
         if(result.intent == "select"){
             sql=`select * from ${table.option}`;
+            console.log(sql);
         }
 
         if (result.intent == "select.var") {
           if (attribute.sourceText.includes("and")) {
               attr = attribute.sourceText.split(' and ')
-              console.log(attr)
+              // console.log(attr)
           } else {
               attr = attribute.sourceText.split(' ')
           }
@@ -139,26 +140,24 @@ const handler={
               sql=`update ${table.option} set ${newColumn.sourceText}=${newdata} where ${column.sourceText}=${olddata}` 
           }
         
-        console.log(sql)
+        // console.log(sql)
 
         return sql;
 
 
     } catch (error) {
-            return error.message;
+        return error.message;
     }
         
     },
     executeQuery: async function(query){
         try{
-           
+            console.log(query);
             let results = await connection.queryAsync(query);
-            results.forEach(element => { console.log(element); });
-           
-
-            
+            results.forEach(element => { console.log(element); });           
         }catch(err){
             console.log(err.message);
+            return error.message;
         }
     }
 };

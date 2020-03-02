@@ -11,8 +11,8 @@ const HistoryItem = props => {
                 </Typography>
             </div>
             <div>
-                <Typography style={{ padding: "10px", fontWeight: "400" }}>
-                    {props.sql}
+                <Typography style={{ padding: "10px", fontWeight: "700" }}>
+                    {props.sql.toUpperCase()}
                 </Typography>
             </div>
         </Paper>

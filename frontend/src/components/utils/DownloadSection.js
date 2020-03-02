@@ -121,6 +121,12 @@ const DownloadSection = () => {
                         onChange={handleTranslateChange}
                         variant="outlined" 
                         style={{ color: "white", width: "100%" }}
+                        onKeyPress={(e) => { 
+                            if (e.key === 'Enter') {
+                                e.preventDefault(); 
+                                submitTranslate();
+                            } 
+                        }}
                         InputLabelProps={{
                             classes: {
                             root: classes.cssLabel,

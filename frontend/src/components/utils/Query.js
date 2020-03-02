@@ -58,9 +58,11 @@ const Query = () => {
           );
           console.log(responseData);
           if (!responseData.query) {
-              queryContext.sqlqueried(0);
+              queryContext.queried("");
+              queryContext.sqlqueried("error");
               queryContext.loadingTable(false);
           } else {
+              queryContext.queried("");
               queryContext.sqlqueried(responseData.query)
               queryContext.setSQLTableData(responseData.results);
               queryContext.loadingTable(false);
@@ -79,6 +81,12 @@ const Query = () => {
             inputProps={{ 'aria-label': 'type your query here' }}
             value={queryContext.query}
             onChange={handleInput}
+            onKeyPress={(e) => { 
+              if (e.key === 'Enter') {
+                  e.preventDefault(); 
+                  sendQueryHandler();
+              } 
+          }}
             fullWidth
         />
         <IconButton onClick={sendQueryHandler} className={classes.iconButton} aria-label="send">

@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import AutoGrid from './AutoGrid';
 import Query from './Query';
 import Database from './Database';
+import SQLQuery from './SQLQuery';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
@@ -38,6 +39,7 @@ const Landing = () => {
                 )
             )} 
             </Paper>
+            <SQLQuery />
             <Query />
             <DownloadSection />
             <div style={{ height: "100px" }}></div>
