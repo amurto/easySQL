@@ -5,17 +5,23 @@
 easySQL automates the process of using Natural Language to conduct queries on Relational databases. It supports Speech-to-text and around 30 Languages.
   
 ## nlp2SQL
-Full name extraction using spaCy.
-Education extraction using NLTK corpus matching.
-Email & phone number extraction using Regex.
-Skills set extraction using spaCy. Rule-based matching against noun chunks.
+Named Entity Recognition using node-nlp for tagging query intent, tables and metadata.
+Supports multiple query statements.
 
-## Recommendation System
-Finding the most similar words using the GenSim Word2Vec model trained on a corpus of technical terms.
+## Speech Recognition
+Speech-to-text option available for querying tables directly through voice.
 
-## Web Scraping
-Scraping profiles from LinkedIn using Scrapy and Selenium.
+## Multilingual Translation
+Supports detection of input language and translation to English.
+Supports around 30 languages including Hindi.
 
-## Designation Extraction 
-NER tagger for scraping designation from the text using spaCy.
-Matching entered keyword with a designation from filtered resumes.
+## Tables downloadable in csv format
+Option to download SQL tables in csv format.
+
+## Data Visualization
+Visualization of SQL tables using Plotly.
+Compare column v/s column and plot it using various charts.
+Option to edit and download plots in png format.
+
+## Query History
+Stores successful user entered queties, both text and SQL query.
