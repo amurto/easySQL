@@ -1,10 +1,10 @@
-# JobLo
+# easySQL
 
-##### Recruitment Assistant using Job Profile Filtering and Web Scraping profiles from LinkedIn
+##### Query SQL Tables using Natural Language, without writing a query
 
-JobLo automates the process of a recruiter swiping through resumes by directly providing a dynamic interface with resumes segregated and classified as per the skillset using Resume Parser. The recruiters can use the search engine to filter out job profiles according to their requirements.
-
-## Resume Parser
+easySQL automates the process of using Natural Language to conduct queries on Relational databases. It supports Speech-to-text and around 30 Languages.
+  
+## nlp2SQL
 Full name extraction using spaCy.
 Education extraction using NLTK corpus matching.
 Email & phone number extraction using Regex.
