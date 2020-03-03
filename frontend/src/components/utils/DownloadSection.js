@@ -180,7 +180,7 @@ const DownloadSection = () => {
                 </FormControl>
                 {state.database && (
                     <div>
-                        <a style={{ textDecoration: "none" }} href={state.database === 'Students' ? 'http://localhost:5000/students-data.csv' : 'http://localhost:5000/cars-data.csv'}>
+                        <a style={{ textDecoration: "none" }} href={state.database === 'Students' ? 'https://easysql.herokuapp.com/students-data.csv' : 'https://easysql.herokuapp.com/cars-data.csv'}>
                             <Button
                             variant="contained"
                             className={classes.button}
