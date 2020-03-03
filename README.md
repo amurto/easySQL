@@ -18,6 +18,9 @@ Supports around 30 languages including Hindi.
 ## Tables downloadable in csv format
 Option to download SQL tables in csv format.
 
+## Chatbot Assistance
+FAQ chatbot to help user get acquainted with the app.
+
 ## Data Visualization
 Visualization of SQL tables using Plotly.
 Compare column v/s column and plot it using various charts.
