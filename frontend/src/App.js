@@ -1,4 +1,5 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { useHttpClient } from './components/hooks/http-hook';
 import { 
   BrowserRouter as Router, 
   Route, 
@@ -11,14 +12,31 @@ import { QueryContext } from './components/context/query-context';
 import PrimaryAppBar from './components/utils/PrimaryAppBar';
 import Landing from './components/utils/Landing';
 import BottomNav from './components/utils/BottomNav';
-// import Visualization from './components/utils/Visualization';
-// import History from './components/utils/History';
+import Visualization from './components/utils/Visualization';
+import History from './components/utils/History';
 import SpeedDial from './components/utils/SpeedDial';
 
-const Visualization = React.lazy(() => import('./components/utils/Visualization'));
-const History = React.lazy(() => import('./components/utils/History'));
+// const Visualization = React.lazy(() => import('./components/utils/Visualization'));
+// const History = React.lazy(() => import('./components/utils/History'));
 
 const App = () => {
+  // eslint-disable-next-line
+  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+
+  useEffect(() => {
+    const loadCSV = async () => {
+        try {
+            const responseData = await sendRequest(
+                process.env.REACT_APP_BACKEND_URL + '/create-csv',
+            );
+            console.log(responseData)               
+        } catch (err) {
+          console.log(err);
+        }
+      };
+      loadCSV();
+  }, [sendRequest]);
+
   const [query, setQuery] = useState("");
   const [SQLTable, setSQLTable] = useState([]);
   const [sql, setSQL] = useState("");

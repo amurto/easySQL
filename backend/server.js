@@ -1,5 +1,7 @@
 const express = require('express');
 const fs = require('fs');
+const path = require('path');
+require('dotenv').config()
 const translate = require('@vitalets/google-translate-api');
 
 const bodyparser = require('body-parser');
@@ -16,8 +18,6 @@ app.use(cors());
 app.use(bodyparser.urlencoded({extended:false}));
 app.use(bodyparser.json());
 
-app.use(express.static(__dirname + '/public'));
-
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader(
@@ -29,12 +29,9 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use(express.static(__dirname + '/public'));
+
 app.use((error, req, res, next) => {
-    if (req.file) {
-        fs.unlink(req.file.path, (err) => {
-            console.log(err);
-        });
-    }
     if (res.headerSent) {
         return next(error);
     }
@@ -45,10 +42,10 @@ app.use((error, req, res, next) => {
 const nlpHandler = require('./nlp/nlpHandler');
 
 const db = mysql.createConnection({
-    host     : 'sql12.freesqldatabase.com',
-    user     : 'sql12325245',
-    password : 'tQGhhqwLxh',
-    database : 'sql12325245'
+    host     : process.env.DB_HOST,
+    user     : process.env.DB_USER,
+    password : process.env.DB_PASS,
+    database : process.env.DB_DATABASE
 });
 
 db.connect((err) => {
@@ -116,20 +113,20 @@ app.get('/create-sheet', (req,res) => {
     let data = req.body.table;
     if(data == 'students'){
         let sql = 'SELECT * FROM students';
-    db.query(sql, (err, results) => {
-    if(err) throw err;
-    const csvData = csvjson.toCSV(results, {
-    headers: 'key'
-});
-    writeFile('public/students-data.csv', csvData, (err) => {
-    if(err) {
-        console.log(err); // Do something to handle the error or just throw it
-        throw new Error(err);
-    }
-    res.send('Successfully downloaded');
-});
-})
-    }else{
+        db.query(sql, (err, results) => {
+        if(err) throw err;
+        const csvData = csvjson.toCSV(results, {
+        headers: 'key'
+    });
+        writeFile('public/students-data.csv', csvData, (err) => {
+        if(err) {
+            console.log(err); // Do something to handle the error or just throw it
+            throw new Error(err);
+        }
+        res.send('Successfully downloaded');
+    });
+    })
+    } else {
         let sql = 'SELECT * FROM cars';
         db.query(sql, (err, results) => {
         if(err) throw err;
@@ -145,7 +142,36 @@ app.get('/create-sheet', (req,res) => {
     });
     })
     }
-    
+})
+
+app.get('/create-csv', (req, res) => {
+    let sql = 'SELECT * FROM students';
+        db.query(sql, (err, results) => {
+        if(err) throw err;
+        const csvData = csvjson.toCSV(results, {
+        headers: 'key'
+    });
+    writeFile('public/students-data.csv', csvData, (err) => {
+        if(err) {
+            console.log(err); // Do something to handle the error or just throw it
+            throw new Error(err);
+        }
+    });
+    })
+    let sql2 = 'SELECT * FROM cars';
+        db.query(sql2, (err, results) => {
+        if(err) throw err;
+        const csvData = csvjson.toCSV(results, {
+        headers: 'key'
+    });
+    writeFile('public/cars-data.csv', csvData, (err) => {
+        if(err) {
+            console.log(err); // Do something to handle the error or just throw it
+            throw new Error(err);
+        }
+    });
+    res.send({"success":true});
+    })
 })
 
 // Create DB
@@ -168,6 +194,6 @@ app.get('/history', (req, res) => {
 });
 
 let PORT = 5000;
-app.listen( PORT, () => {
+app.listen( process.env.PORT || PORT, () => {
     console.log(`listening on ${PORT}`);
 });
