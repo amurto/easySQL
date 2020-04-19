@@ -44,7 +44,7 @@ Option to edit and download plots in png format.
 ### Query History
 Stores successful user entered queties, both text and SQL query.
  
-### Webapp Images
+## Webapp Images
 ![Image of Website](templates/demo.jpg)
 
 # Dependencies
