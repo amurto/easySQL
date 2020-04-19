@@ -1,6 +1,8 @@
 # easySQL
 This webapp performs queries on Relational databases using Natural Language with various features.
 
+![easySQL Demo](templates/demo.gif)
+
 # Table of Contents
 
 * [Description](https://github.com/amurto/easySQL#description)
@@ -42,8 +44,8 @@ Option to edit and download plots in png format.
 ### Query History
 Stores successful user entered queties, both text and SQL query.
  
-### Website Images
-![Image of Website](images/demo.jpg)
+### Webapp Images
+![Image of Website](template/demo.jpg)
 
 # Dependencies
 
