@@ -1,5 +1,5 @@
 # easySQL
-This webapp performs queries on Relational databases using Natural Language with various features.
+Query SQL Tables using Natural Language, without writing a query
 
 ![easySQL Demo](templates/demo.gif)
 
@@ -14,8 +14,6 @@ This webapp performs queries on Relational databases using Natural Language with
 * [License](https://github.com/amurto/easySQL#license)
 
 # Description
-
-##### Query SQL Tables using Natural Language, without writing a query
 
 easySQL automates the process of using Natural Language to conduct queries on Relational databases. It supports Speech-to-text and around 30 Languages.
   
