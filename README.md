@@ -45,7 +45,6 @@ Stores successful user entered queties, both text and SQL query.
 ### Website Images
 ![Image of Website](images/demo.jpg)
 
-
 # Dependencies
 
 * [npm](https://www.npmjs.com/)
@@ -53,12 +52,13 @@ Stores successful user entered queties, both text and SQL query.
 * [MySQL](https://www.mysql.com/)
 * [XAMPP](https://www.apachefriends.org/index.html)
 * [React.js](https://reactjs.org/)
+* [Plotly](https://plotly.com/javascript/)
 
 # Installation
 
 ### Prerequisites
 
-Install Node.js and npm using the link above. Follow instructions on their respecive websites. Npm is included with Node.js. Setup XAMPP server and load the [database](https://github.com/amurto/easySQL/blob/master/backend/database/nodemysql.sql) into MySQL tables. COpy the MySQL credentials and paste them appropriately in the [.env](https://github.com/amurto/easySQL/blob/master/backend/.env) file.
+Install Node.js and npm using the link above. Follow instructions on their respecive websites. Npm is included with Node.js. Setup XAMPP server and load the [database](https://github.com/amurto/easySQL/blob/master/backend/database/nodemysql.sql) into MySQL tables. Copy the MySQL credentials and paste them appropriately in the [.env](https://github.com/amurto/easySQL/blob/master/backend/.env) file.
 
 ### Instructions
 
