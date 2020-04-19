@@ -45,7 +45,7 @@ Option to edit and download plots in png format.
 Stores successful user entered queties, both text and SQL query.
  
 ### Webapp Images
-![Image of Website](template/demo.jpg)
+![Image of Website](templates/demo.jpg)
 
 # Dependencies
 
